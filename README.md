@@ -14,6 +14,12 @@ Run `Ctrl + C` to stop if you are done with everything.
 1. Open a new terminal.  
 2. Run `docker-compose exec ros bash` (`docker-compose up` has to be running)
 
+## User & Password
+User: `user01`  
+Pass: `newpassword`  
+
+If you want to change a username and passwor, edit `Dockerfile`  
+
 ## Testing
 4. Run `cd ~/catkin_ws && catkin_make && source devel/setup.bash`
 5. Run `rosrun rviz rviz`
