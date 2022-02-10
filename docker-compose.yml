@@ -4,11 +4,9 @@ services:
     build: .
     command: tail -f /dev/null
     volumes: 
-      - ./workspace:/root/catkin_ws/
+      - ./user01:/home/user01
     environment:
       - DISPLAY=novnc:0.0
-    env_file:
-      - ros.env
     networks:
       - x11
   novnc:  
