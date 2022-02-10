@@ -5,14 +5,20 @@ for the ros development on macOS.
 ## Setup
 1. Install Docker ([installation instructions here](https://docs.docker.com/docker-for-mac/install/))
 2. Clone this repository
-3. Run `docker-compose up --build`
-
-Keep docker-compose running during working on your project.  
-Run `Ctrl + C` to stop if you are done with everything.
+3. Run `docker-compose up --build -d`
 
 ## Running
 1. Open a new terminal.  
 2. Run `docker-compose exec ros bash` (`docker-compose up` has to be running)
+
+Keep docker-compose running during working on your project (See the section below).  
+
+## Start & Stop docker-compose
+To start docker-compose, run the following command.
+`docker-compose start`
+
+To stop docker-compose, run the following command.
+`docker-compose stop`
 
 ## User & Password
 User: `user01`  
