@@ -1,4 +1,4 @@
-# ROS on Mac
+# ROS on Docker
 I referred [this thread](https://gist.github.com/vfdev-5/b7685371071036cb739f23b3794b5b83?permalink_comment_id=3533817#gistcomment-3533817)
 for the ros development on macOS.
 
