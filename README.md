@@ -20,21 +20,25 @@ bash docker/build_image.sh
 
 ### 1. Open a new terminal.
 
-### 2. Run `run_container.sh`
+### 2. Run `run_container.sh` and connect to the container
 ```bash
 bash docker/run_container.sh
 ```
 
+### 3. Connect to the container
+```bash
+docker exec -it noetic_ws-dev bash
+```
+Ctrl + d to exit.
+
 ## Installing a new package from apt Repository
-Add a package name that you want to install between line 4-19 on Dockerfile.dev.
+Add a package name that you want to install between line 20-25 on Dockerfile.dev and rebuild the docker image with `docker/build_image.sh`
 ```docker
-RUN apt update && apt install -y --no-install-recommends \
-    ...
+# Install ros packages
+RUN apt update && apt install -y \
     ros-noetic-joy \
     ros-noetic-teleop-twist-joy \
-    ros-noetic-moveit \
-    ...
-    && rm -rf /var/lib/apt/lists/*
+    ros-noetic-moveit
 ```
 
 **Note:** The packages you installed during development will be removed from your docker container after the container is removed.
@@ -50,6 +54,9 @@ Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/tut
 2. In a terminal on the host, run xhost +localhost.
 3. Pass -e DISPLAY=host.docker.internal:0 to any docker image you want to forward X to the host.
 4. Run your application from your docker container.
+
+## Troubleshooting
+- ...
 
 ## Reference
 - https://gist.github.com/vfdev-5/b7685371071036cb739f23b3794b5b83?permalink_comment_id=3533817#gistcomment-3533817

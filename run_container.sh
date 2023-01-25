@@ -3,13 +3,14 @@
 source $(dirname $0)/.env
 WS_NAME=`echo $(basename $(cd $(dirname $0)/../; pwd)) | sed -e 's/-/_/g'`
 
-if [[ "$(uname -r)" == *microsoft* ]]; then
-  HOST_IP=`ipconfig.exe | grep IPv4 | grep -v 172 | cut -d: -f2 | awk '{ print $1}' | sed 's/\r//g'`
-  DISPLAY=${HOST_IP}:0.0
-else
-  HOST_IP=`ifconfig wlan0 | grep "inet " | awk -F'[: ]+' '{ print $4 }'`
-  DISPLAY=${HOST_IP}:0.0
-fi
+DISPLAY=${HOST_IP}:0.0
+# if [[ "$(uname -r)" == *microsoft* ]]; then
+#   HOST_IP=`ipconfig.exe | grep IPv4 | grep -v 172 | cut -d: -f2 | awk '{ print $1}' | sed 's/\r//g'`
+#   DISPLAY=${HOST_IP}:0.0
+# else
+#   HOST_IP=`ifconfig wlan0 | grep "inet " | awk -F'[: ]+' '{ print $4 }'`
+#   DISPLAY=${HOST_IP}:0.0
+# fi
 
 if [ -e $DISPLAY ]; then
   echo "Not found DISPLAY envvar"
