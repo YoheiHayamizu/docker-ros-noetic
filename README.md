@@ -11,6 +11,12 @@ cd catkin_ws
 git clone git@github.com:YoheiHayamizu/docker-ros-noetic.git docker
 ```
 
+### 3. Update .env file
+Check the ip address of your host and replace `HOST_IP` with it in `.env` file.
+To check ip address,
+- windows subsystem for linux (wsl2): ```$ wsl.exe hostname -I```
+- mac: ```$ ifconfig```
+
 ### 3. Run `docker/build_image.sh`
 ```bash
 bash docker/build_image.sh
