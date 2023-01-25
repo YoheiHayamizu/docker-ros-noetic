@@ -7,6 +7,7 @@ RUN apt update && apt install -y --no-install-recommends \
     vim \
     net-tools \
     wget \
+    x11-apps \
     libpython3-dev \
     python3-pip \
     python3-catkin-tools \
