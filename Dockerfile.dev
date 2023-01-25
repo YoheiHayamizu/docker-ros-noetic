@@ -1,0 +1,31 @@
+FROM osrf/ros:noetic-desktop-full-focal
+
+RUN apt update && apt install -y --no-install-recommends \
+    sudo \
+    gosu \
+    less \
+    bash-completion \
+    astyle \
+    build-essential \
+    git \
+    vim \
+    iputils-ping \
+    net-tools \
+    dnsutils \
+    wget \
+    libpython3-dev \
+    python3-pip \
+    python3-catkin-tools \
+    python3-rosdep \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install -U \
+    argcomplete
+
+RUN echo ALL ALL=\(ALL:ALL\) NOPASSWD: ALL>> /etc/sudoers
+
+COPY ./entrypoint.sh /
+RUN chmod o+x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
