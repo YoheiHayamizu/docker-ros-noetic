@@ -17,6 +17,13 @@ RUN apt update && apt install -y --no-install-recommends \
 RUN pip3 install -U \
     argcomplete
 
+# Install Pytorch
+RUN pip3 install \
+    torch 
+    torchvision 
+    torchaudio 
+    --extra-index-url https://download.pytorch.org/whl/cpu
+
 # Install ros packages
 # RUN apt update && apt install -y \
 #     ros-noetic-joy \
