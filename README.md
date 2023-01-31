@@ -17,12 +17,12 @@ To check ip address,
 - windows subsystem for linux (wsl2): ```$ wsl.exe hostname -I```
 - mac: ```$ ifconfig```
 
-### 3. Run `docker/build_image.sh`
+### 3. Run `docker/build_image.sh` to build the docker image
 ```bash
 bash docker/build_image.sh
 ```
 
-## Running
+## Starting the docker container 
 
 ### 1. Open a new terminal.
 
@@ -31,7 +31,13 @@ bash docker/build_image.sh
 bash docker/run_container.sh
 ```
 
-### 3. Connect to the container
+## Connect to the container
+### 1. Check if the docker container is running.
+```bash
+docker container ps -al
+```
+
+### 2. Access to bash in the docker container.
 ```bash
 docker exec -it noetic_ws-dev bash
 ```
@@ -62,7 +68,8 @@ Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/tut
 4. Run your application from your docker container.
 
 ## Troubleshooting
-- ...
+If you face a problem, feel free to post an issue on this repository.
+- 
 
 ## Reference
 - https://gist.github.com/vfdev-5/b7685371071036cb739f23b3794b5b83?permalink_comment_id=3533817#gistcomment-3533817
