@@ -36,6 +36,7 @@ bash docker/run_container.sh
 ```bash
 docker container ps -al
 ```
+If you don't see a container whome status is running, make sure that you ran ```bash docker/run_container.sh``` with no error.
 
 ### 2. Access to bash in the docker container.
 ```bash
