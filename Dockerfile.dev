@@ -19,9 +19,9 @@ RUN pip3 install -U \
 
 # Install Pytorch
 RUN pip3 install \
-    torch 
-    torchvision 
-    torchaudio 
+    torch \
+    torchvision \
+    torchaudio \
     --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Install ros packages
